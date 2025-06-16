@@ -95,6 +95,7 @@ class CChan:
 
     def get_load_stock_iter(self, stockapi_cls, lv):
         stockapi_instance = stockapi_cls(code=self.code, k_type=lv, begin_date=self.begin_time, end_date=self.end_time, autype=self.autype)
+        self.quote_api = stockapi_instance
         return self.load_stock_data(stockapi_instance, lv)
 
     def add_lv_iter(self, lv_idx, iter):
